@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<robot name="vv_kuwamai" xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:include filename="$(find vv_kuwamai_description)/urdf/base/base.urdf.xacro"/>
+  <xacro:include filename="$(find vv_kuwamai_description)/urdf/arm/arm.urdf.xacro"/>
+  <link name="world"/>
+
+  <xacro:base parent="world">
+    <origin xyz="0 0 0.005"/>
+  </xacro:base>
+
+  <xacro:arm prefix="1" parent="base_link">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+  </xacro:arm>
+  
+  <xacro:arm prefix="2" parent="arm_1">
+    <origin xyz="0 0 0.1" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+  </xacro:arm>
+</robot>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>vv_kuwamai_description</name>
+  <version>1.0.0</version>
+  <description>The vv_kuwamai_description package</description>
+
+  <maintainer email="kuwamai.beetle@gmail.com">kuwagata</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <export>
+  </export>
+</package>

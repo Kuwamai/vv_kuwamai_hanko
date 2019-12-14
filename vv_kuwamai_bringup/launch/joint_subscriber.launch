@@ -1,0 +1,3 @@
+<launch>
+    <node name="joint_subscriber" pkg="vv_kuwamai_bringup" type="joint_subscriber" />
+</launch>

@@ -1,0 +1,9 @@
+<launch>
+    <arg name="gui" default="false" />
+    <rosparam param="source_list">["joint_states_source"]</rosparam>
+
+    <include file="$(find vv_kuwamai_description)/launch/display.launch">
+        <arg name="gui" value="$(arg gui)" />
+    </include>
+    <node name="rviz_joint_subscriber" pkg="vv_kuwamai_bringup" type="rviz_joint_subscriber.py" />
+</launch>
