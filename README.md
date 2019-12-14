@@ -1,8 +1,12 @@
 # [WIP] vv_kuwamai_hanko
+![](https://gyazo.com/d4db7bdcbe0a223d929492ad16cb8371/raw)
 
 ## Description
 受信、印刷、押印、投稿を繰り返すロボットです。  
 まだ開発中で色々散らかってます。  
+
+動作している様子↓
+[押印ロボット_紹介映像](https://youtu.be/dkK9gP4Uo3w)
 
 下記の作業を繰り返し実行します。
 
