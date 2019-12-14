@@ -1,0 +1,7 @@
+<launch>
+    <include file="$(find vv_kuwamai_bringup)/launch/rviz_joint_subscriber.launch" />
+    <node name="arm_ik" pkg="vv_kuwamai_bringup" type="ik.py" />
+    <node name="upload_media" pkg="vv_kuwamai_apps" type="upload_media.py" />
+    <node name="wp_server" pkg="vv_kuwamai_apps" type="wp_server.py" />
+    <node name="read_master" pkg="vv_kuwamai_apps" type="read_master.py" />
+</launch>

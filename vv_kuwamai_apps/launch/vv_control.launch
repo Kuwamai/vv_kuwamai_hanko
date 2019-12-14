@@ -1,0 +1,7 @@
+<launch>
+    <node name="joint_subscriber" pkg="vv_kuwamai_bringup" type="joint_subscriber" />
+    <node name="arm_ik" pkg="vv_kuwamai_bringup" type="ik.py" />
+    <node name="wp_server" pkg="vv_kuwamai_apps" type="wp_server.py" />
+    <node name="upload_media" pkg="vv_kuwamai_apps" type="upload_media.py" output="screen" />
+    <node name="read_master" pkg="vv_kuwamai_apps" type="read_master.py" output="screen" />
+</launch>

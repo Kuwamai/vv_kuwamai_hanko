@@ -1,0 +1,8 @@
+# Define the goal
+geometry_msgs/Point hanko_pos
+---
+# Define the result
+bool done
+---
+# Define a feedback message
+float32 percent_complete

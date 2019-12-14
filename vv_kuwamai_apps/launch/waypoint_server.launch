@@ -1,0 +1,5 @@
+<launch>
+    <node name="joint_subscriber" pkg="vv_kuwamai_bringup" type="joint_subscriber" />
+    <node name="arm_ik" pkg="vv_kuwamai_bringup" type="ik.py" />
+    <node name="wp_server" pkg="vv_kuwamai_apps" type="wp_server.py" />
+</launch>
