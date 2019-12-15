@@ -54,5 +54,11 @@ $ roslaunch vv_kuwamai_apps vv_control.launch
 $ roslaunch vv_kuwamai_apps rviz_vv_control.launch
 ```
 
+## Collaborators
+[Kato](https://github.com/YusukeKato): Tweet画像生成
+[Kuwamai](https://github.com/Kuwamai): デザイン, 制御
+[Shibata](https://github.com/s-shibata): Twitter連携
+[Shimada](https://github.com/Shimataku9311): 設計, 加工
+
 ## License
 This repository is licensed under the MIT license, see [LICENSE](./LICENSE).
