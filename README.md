@@ -17,9 +17,13 @@
 1. 押印した書類をカメラで撮影
 1. 撮影した画像をTweet
 
+実際のTweetはこちらから見ることができます↓  
+https://twitter.com/vv_kuwamai
+
 ## Requirements
 * Ubuntu18.04
 * ROS Melodic
+* ロボット本体
 
 ## Installation
 下記コマンドで本リポジトリをクローン、ビルドします。
@@ -35,6 +39,12 @@ $ source ~/catkin_ws/devel/setup.bash
 
 ```
 $ sudo chmod 666 /dev/ttyUSB0
+```
+
+実行するデバイスの時間がずれているとTweetの取得に失敗するので、その際は下記コマンドを実行します。
+
+```
+$ curl -SsfL https://git.io/set_date | sh
 ```
 
 下記コマンドを実行して起動します。
