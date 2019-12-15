@@ -59,6 +59,7 @@ $ roslaunch vv_kuwamai_apps rviz_vv_control.launch
 * [Kuwamai](https://github.com/Kuwamai): デザイン, 制御
 * [Shibata](https://github.com/s-shibata): Twitter連携
 * [Shimada](https://github.com/Shimataku9311): 設計, 加工
+* 工作機械、実験の場を提供してくださった研究室に感謝します
 
 ## License
 This repository is licensed under the MIT license, see [LICENSE](./LICENSE).
