@@ -1,6 +1,22 @@
 <launch>
-    <node name="joint_subscriber" pkg="vv_kuwamai_bringup" type="joint_subscriber" />
-    <node name="arm_ik" pkg="vv_kuwamai_bringup" type="ik.py" />
-    <node name="pose_to_point" pkg="vv_kuwamai_apps" type="pose_to_point.py" />
-    <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch" />
+  <arg name="x_max" default="0.19"/>
+  <arg name="x_min" default="0.04"/>
+  <arg name="y_max" default="0.19"/>
+  <arg name="y_min" default="-0.19"/>
+  <arg name="z_max" default="0.19"/>
+  <arg name="z_min" default="-0.08"/>
+  <arg name="pos_scale" default="0.5"/>
+
+  <node name="joint_subscriber" pkg="vv_kuwamai_bringup" type="joint_subscriber" />
+  <node name="arm_ik" pkg="vv_kuwamai_bringup" type="ik.py" />
+  <node name="pose_to_point" pkg="vv_kuwamai_apps" type="pose_to_point.py" >
+    <param name="x_max" value="$(arg x_max)"/>
+    <param name="x_min" value="$(arg x_min)"/>
+    <param name="y_max" value="$(arg y_max)"/>
+    <param name="y_min" value="$(arg y_min)"/>
+    <param name="z_max" value="$(arg z_max)"/>
+    <param name="z_min" value="$(arg z_min)"/>
+    <param name="pos_scale" value="$(arg pos_scale)"/>
+  </node>
+  <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch" />
 </launch>
