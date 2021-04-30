@@ -28,10 +28,10 @@ class PoseToPoint:
     def convert(self):
         while not rospy.is_shutdown():
             pos = np.array([self.pose_msg.position.x, self.pose_msg.position.y, self.pose_msg.position.z])
+            pos = pos * self.pos_scale
             pos[0] = np.clip(pos[0], self.x_min, self.x_max)
             pos[1] = np.clip(pos[1], self.y_min, self.y_max)
             pos[2] = np.clip(pos[2], self.z_min, self.z_max)
-            pos = pos * self.pos_scale
 
             pos_msg = geometry_msgs.msg.Point()
             pos_msg.x = pos[0]

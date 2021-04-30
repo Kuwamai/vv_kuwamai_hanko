@@ -5,7 +5,7 @@
   <arg name="y_min" default="-0.19"/>
   <arg name="z_max" default="0.19"/>
   <arg name="z_min" default="-0.08"/>
-  <arg name="pos_scale" default="0.5"/>
+  <arg name="pos_scale" default="0.1"/>
 
   <node name="joint_subscriber" pkg="vv_kuwamai_bringup" type="joint_subscriber" />
   <node name="arm_ik" pkg="vv_kuwamai_bringup" type="ik.py" />
