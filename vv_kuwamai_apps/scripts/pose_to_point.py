@@ -8,9 +8,9 @@ import numpy as np
 class PoseToPoint:
     def __init__(self):
         rospy.init_node('pose_to_point')
-        self.pose_sub = rospy.Subscriber("/arm_pose", geometry_msgs.msg.Pose, self.pose_callback)
+        self.pose_sub = rospy.Subscriber("/arm_pose", geometry_msgs.msg.PoseStamped, self.pose_callback)
         self.point_pub = rospy.Publisher("/arm_pos", geometry_msgs.msg.Point, queue_size=1)
-        self.pose_msg = rospy.wait_for_message("/arm_pose", geometry_msgs.msg.Pose)
+        self.pose_msg = rospy.wait_for_message("/arm_pose", geometry_msgs.msg.PoseStamped).pose
 
         self.x_max = rospy.get_param("/pose_to_point/x_max")
         self.x_min = rospy.get_param("/pose_to_point/x_min")
@@ -23,7 +23,7 @@ class PoseToPoint:
         self.rate = rospy.Rate(30)
  
     def pose_callback(self, msg):
-        self.pose_msg = msg
+        self.pose_msg = msg.pose
 
     def convert(self):
         while not rospy.is_shutdown():
