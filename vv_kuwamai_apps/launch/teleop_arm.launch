@@ -18,5 +18,5 @@
     <param name="z_min" value="$(arg z_min)"/>
     <param name="pos_scale" value="$(arg pos_scale)"/>
   </node>
-  <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch" />
+  <include file="$(find ros_tcp_endpoint)/launch/endpoint.launch" />
 </launch>
