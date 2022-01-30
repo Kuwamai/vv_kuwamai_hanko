@@ -16,7 +16,7 @@ int main(int argc, char **argv)
     float theta[3] = {0, 0, 90};
     float target[3];
     float offset[3] = {9.5, -3, -10};
-    float js_vel = 5;
+    float js_vel = 3;
     float js_ref;
     float js_diff;
     int i;
@@ -43,7 +43,7 @@ int main(int argc, char **argv)
     ros::Subscriber sub = n.subscribe("/vv_kuwamai/master_joint_state", 10, joint_callback);
     armjs = *(ros::topic::waitForMessage<sensor_msgs::JointState>("/vv_kuwamai/master_joint_state"));
 
-    ros::Rate loop_rate(100);
+    ros::Rate loop_rate(10);
 
     while (ros::ok())
     {
@@ -56,9 +56,6 @@ int main(int argc, char **argv)
             else theta[i] = js_ref;
         }
 
-        ROS_INFO("js_ref:%f, %f, %f", armjs.position[0] / PI * 180.0, armjs.position[1] / PI * 180.0, armjs.position[2] / PI * 180.0);
-        ROS_INFO("theta:%f, %f, %f", theta[0], theta[1], theta[2]);
-
         target[0] = theta[0];
         target[1] = -theta[1];
         target[2] = theta[2] + theta[1] - 90;
@@ -66,7 +63,7 @@ int main(int argc, char **argv)
         for(i=0; i<3; i++)
         {
             //servo.move_target_degree(i+1, target[i] + offset[i]);
-            servo.setAngleInTime(i+1, target[i] + offset[i], 150);
+            servo.setAngleInTime(i+1, target[i] + offset[i], 100);
         }
 
         ros::spinOnce();
